@@ -1,6 +1,6 @@
 package com.portfolio.MyPortfolio8.service;
 
-import com.portfolio.MyPortfolio8.controller.model.Person;
+import com.portfolio.MyPortfolio8.model.Person;
 import com.portfolio.MyPortfolio8.repository.IPersonRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

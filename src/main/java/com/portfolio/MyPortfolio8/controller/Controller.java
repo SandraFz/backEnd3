@@ -1,6 +1,6 @@
 package com.portfolio.MyPortfolio8.controller;
 
-import com.portfolio.MyPortfolio8.controller.model.Person;
+import com.portfolio.MyPortfolio8.model.Person;
 import com.portfolio.MyPortfolio8.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +20,6 @@ public class Controller {
     @Autowired
     private IPersonaService persoServ; 
     
-    /*List<Person> listPerson = new ArrayList();
-    
-    @GetMapping ("/hola/{name}")
-    public String holaMundo(@PathVariable String name) {
-        return "Hola, " + name;
-    }*/
-    
     @GetMapping ("/chau")
     public String chauYou (@RequestParam String name){
         return "Chau, " +name;
@@ -35,14 +28,12 @@ public class Controller {
     @PostMapping("/createPerson")
     public void createPerson(@RequestBody Person pers){
        persoServ.createPerson(pers);
-        //listPerson.add(pers);
     }
     
     @GetMapping("/listPerson")
     @ResponseBody
     public List<Person> seeListPerson(){
         return persoServ.seeListPerson(); 
-    //return listPerson;
     }
     
     @DeleteMapping("/delete/{id}")
@@ -60,5 +51,7 @@ public class Controller {
     public Person editPerson(@RequestBody Person pers){
         return persoServ.editPerson(pers);
     }
+    
+    
      
 }

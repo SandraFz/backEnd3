@@ -1,6 +1,6 @@
 package com.portfolio.MyPortfolio8.repository;
 
-import com.portfolio.MyPortfolio8.controller.model.Person;
+import com.portfolio.MyPortfolio8.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

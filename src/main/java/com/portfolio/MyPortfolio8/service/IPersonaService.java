@@ -1,6 +1,6 @@
 package com.portfolio.MyPortfolio8.service;
 
-import com.portfolio.MyPortfolio8.controller.model.Person;
+import com.portfolio.MyPortfolio8.model.Person;
 import java.util.List;
 
 public interface IPersonaService {

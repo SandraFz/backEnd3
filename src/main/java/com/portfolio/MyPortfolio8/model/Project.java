@@ -1,4 +1,4 @@
-package com.portfolio.MyPortfolio8.controller.model;
+package com.portfolio.MyPortfolio8.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
