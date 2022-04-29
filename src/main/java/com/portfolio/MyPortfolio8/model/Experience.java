@@ -15,7 +15,7 @@ public class Experience {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Long id;
     
     private String empresa;
     private String funciones;
@@ -27,7 +27,7 @@ public class Experience {
     public Experience() {
     }
 
-    public Experience(int id, String empresa, String funciones, int anio_salida, int duracion, String logo_experience, String link_experience) {
+    public Experience(Long id, String empresa, String funciones, int anio_salida, int duracion, String logo_experience, String link_experience) {
         this.id = id;
         this.empresa = empresa;
         this.funciones = funciones;
@@ -36,6 +36,7 @@ public class Experience {
         this.logo_experience = logo_experience;
         this.link_experience = link_experience;
     }
+
     
     
     
