@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IExperienceRepository extends JpaRepository<Experience, Long> {
 
-    public void deleteById(int id);
+    //public void deleteById(int id);
+
+    //public Object findById(int id);
     
 }

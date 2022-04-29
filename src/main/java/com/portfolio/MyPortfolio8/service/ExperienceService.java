@@ -23,13 +23,13 @@ public class ExperienceService implements IExperienceService {
     }
 
     @Override
-    public void deleteExperience(int id) {
+    public void deleteExperience(Long id) {
         expRepo.deleteById(id);
     }
 
     @Override
-    public Experience findExperience(int id) {
-        return expRepo.findById(Long.MIN_VALUE).orElse(null);
+    public Experience findExperience(Long id) {
+        return expRepo.findById(id).orElse(null);
     }
 
     @Override
