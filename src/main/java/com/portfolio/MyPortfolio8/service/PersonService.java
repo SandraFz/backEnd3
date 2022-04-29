@@ -1,5 +1,6 @@
 package com.portfolio.MyPortfolio8.service;
 
+import com.portfolio.MyPortfolio8.service.interfaces.IPersonaService;
 import com.portfolio.MyPortfolio8.model.Person;
 import com.portfolio.MyPortfolio8.repository.IPersonRepository;
 import java.util.List;

@@ -15,7 +15,8 @@ public class Studies {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Long id;
+    
     private String insti_studios;
     private String title_studios;
     private int anio_ini;
@@ -26,7 +27,7 @@ public class Studies {
     public Studies() {
     }
 
-    public Studies(int id, String insti_studios, String title_studios, int anio_ini, int anio_end, String logo_studios, String link_studios) {
+    public Studies(Long id, String insti_studios, String title_studios, int anio_ini, int anio_end, String logo_studios, String link_studios) {
         this.id = id;
         this.insti_studios = insti_studios;
         this.title_studios = title_studios;
@@ -35,6 +36,8 @@ public class Studies {
         this.logo_studios = logo_studios;
         this.link_studios = link_studios;
     }
+
+    
     
     
     

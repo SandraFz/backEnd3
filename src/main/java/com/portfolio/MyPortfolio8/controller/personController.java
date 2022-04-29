@@ -2,8 +2,8 @@ package com.portfolio.MyPortfolio8.controller;
 
 import com.portfolio.MyPortfolio8.model.Experience;
 import com.portfolio.MyPortfolio8.model.Person;
-import com.portfolio.MyPortfolio8.service.IExperienceService;
-import com.portfolio.MyPortfolio8.service.IPersonaService;
+import com.portfolio.MyPortfolio8.service.interfaces.IExperienceService;
+import com.portfolio.MyPortfolio8.service.interfaces.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

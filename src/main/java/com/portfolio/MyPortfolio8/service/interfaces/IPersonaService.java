@@ -1,4 +1,4 @@
-package com.portfolio.MyPortfolio8.service;
+package com.portfolio.MyPortfolio8.service.interfaces;
 
 import com.portfolio.MyPortfolio8.model.Person;
 import java.util.List;

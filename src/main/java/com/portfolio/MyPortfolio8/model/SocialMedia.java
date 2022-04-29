@@ -11,6 +11,7 @@ public class SocialMedia {
     
     @Id
     private String name_SM;
+    
     private String logo_SM;
     private String link_SM;
 
