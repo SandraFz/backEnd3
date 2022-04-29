@@ -9,6 +9,6 @@ public interface IPersonaService {
     public List<Person> seeListPerson();
     public void deletePerson(Long id);
     public Person findPerson(Long id);
-  
+    public Person editPerson(Person pers);
     
 }

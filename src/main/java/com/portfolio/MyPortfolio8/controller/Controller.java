@@ -34,7 +34,7 @@ public class Controller {
     
     @PostMapping("/createPerson")
     public void createPerson(@RequestBody Person pers){
-        persoServ.createPerson(pers);
+       persoServ.createPerson(pers);
         //listPerson.add(pers);
     }
     
@@ -54,6 +54,11 @@ public class Controller {
     @ResponseBody
     public Person findPerson(@PathVariable Long id){
         return persoServ.findPerson(id);
+    }
+    
+    @PutMapping("/edit")
+    public Person editPerson(@RequestBody Person pers){
+        return persoServ.editPerson(pers);
     }
      
 }
