@@ -1,41 +1,84 @@
 package com.portfolio.MyPortfolio8.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Setter @Getter
 @Entity
 @Table(name="persona")
 public class Person {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id_person;
     
+    @Column (name="name")
     private String name;
+    @Column (name="lastName")
     private String lastName;
+    @Column (name="age")
+    private int age;
+    @Column (name="profession")
+    private String profession;
+    @Column (name="origin")
     private String origin;
+    @Column (name="presentation")
     private String presentation;
-    
+    @Column (name="professional_photo")
     private String professional_photo;
+    @Column (name="email")
     private String email;
+    
+    /*@OneToOne*/
+    
+    @OneToMany(cascade = CascadeType.ALL) 
+    private List<Project> project = new ArrayList<>();
+    /*@OneToMany(mappedBy="person")
+    private List<Experience> experience;
+    @OneToMany(mappedBy="person")
+    private List<Study> study;
+    @OneToMany(mappedBy="person")
+    private List<Skill> skills;
+    @OneToMany(mappedBy="person")
+    private List<SocialMedia> soc_med;*/
+    
+    @JsonManagedReference
+        public List<Project> getProject() {
+        return project;
+    }
+    
+    
 
     public Person() {
     }
 
-    public Person(Long id, String name, String lastName, String origin, String presentation, String professional_photo, String email) {
-        this.id = id;
+    public Person(Long id, String name, String lastName, int age, String profession, String origin, String presentation, String professional_photo, String email, List<Project> project) {
+        this.id_person = id_person;
         this.name = name;
         this.lastName = lastName;
+        this.age = age;
+        this.profession = profession;
         this.origin = origin;
         this.presentation = presentation;
         this.professional_photo = professional_photo;
         this.email = email;
+        this.project = project;
     }
+
+   
+   
+
+   
     
 }

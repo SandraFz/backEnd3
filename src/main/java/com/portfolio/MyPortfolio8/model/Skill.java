@@ -10,30 +10,25 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class SocialMedia {
+public class Skill {
     
     @Id
     private Long id;
-    @Column(name="name_SM")
-    private String name_SM;
-    @Column(name="logo_SM")
-    private String logo_SM;
-    @Column(name="link_SM")
-    private String link_SM;
+    @Column(name="skill")
+    private String name_skill;
+    @Column(name="sk_progress")
+    private int skill_progress;
     /*@ManyToOne
     @JoinColumn(name="person")
     private Long person;*/
 
-    public SocialMedia() {
+    public Skill() {
     }
 
-    public SocialMedia(String name_SM, String logo_SM, String link_SM) {
-        this.name_SM = name_SM;
-        this.logo_SM = logo_SM;
-        this.link_SM = link_SM;
+    public Skill(String name_skill, int skill_progress) {
+        this.name_skill = name_skill;
+        this.skill_progress = skill_progress;
         //this.person = person;
     }
-    
-    
     
 }

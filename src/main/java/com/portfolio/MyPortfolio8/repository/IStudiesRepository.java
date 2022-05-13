@@ -1,10 +1,10 @@
 package com.portfolio.MyPortfolio8.repository;
 
-import com.portfolio.MyPortfolio8.model.Studies;
+import com.portfolio.MyPortfolio8.model.Study;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IStudiesRepository extends JpaRepository<Studies, Long>{
+public interface IStudiesRepository extends JpaRepository<Study, Long>{
     
 }

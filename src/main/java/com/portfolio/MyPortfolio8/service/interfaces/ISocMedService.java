@@ -7,7 +7,7 @@ public interface ISocMedService {
 
     public void createSocMedia(SocialMedia soc);
     public List<SocialMedia> seeListSocMed();
-    public SocialMedia findSocMed(String id);
-    public void deleteSocMed(String id);
+    public SocialMedia findSocMed(Long id);
+    public void deleteSocMed(Long id);
     public SocialMedia editSocMed(SocialMedia soc);
 }
