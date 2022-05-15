@@ -61,37 +61,40 @@ public class PersonService implements IPersonaService {
     }
 
     //Recibe un DTO, la convierte en Entity, guarda el cambio y la devuelve como DTO.
-   /* @Override
-    public PersonDTO editPerson(PersonDTO persDto){
-        
-        Person person = mapper.requestPerson(persDto);
-        Person editPers = persoRepo.saveAndFlush(person);
-        PersonDTO ediPersDto = mapper.responsePerson(editPers);
-        
-        return ediPersDto;
-    }*/
-   
     @Override
-    public PersonDTO editPerson (Long id){
-        Person pers = persoRepo.findById(id).orElse(null);
-        Person editPers = persoRepo.saveAndFlush(pers);
-        PersonDTO editPersDto = mapper.responsePerson(editPers);
+    public PersonDTO editPerson (Long id, PersonDTO persDto){
         
-        return editPersDto;
+        
+        Person pers = persoRepo.getById(id);
+        Person toEditPers = mapper.requestPerson(persDto);
+        Person updatePers = persoRepo.save(toEditPers);
+        PersonDTO updatePersDto = mapper.responsePerson(updatePers);
+        
+        return updatePersDto;
+        
+        
+       /*
+         Person pers = persoRepo.getById(id);
+        Person editedPers = mapper.requestPerson(persDto);
+        
+        PersonDTO editedPersDto = mapper.responsePerson(editedPers);
+        
+        return editedPersDto;
+        */
+        
+       
+        /*
+       Person pers = persoRepo.getById(id); 
+        Person editedPers = persoRepo.save(pers);
+        PersonDTO editedPersDto = mapper.responsePerson(editedPers);
+     
+        return editedPersDto;
+       */
+        
+        
     }
 }
     
-    /*
-@Override
-    public AuthorResponseDto editAuthor(Long authorId, AuthorRequestDto authorRequestDto) {
-        Author authorToEdit = getAuthor(authorId);
-        authorToEdit.setName(authorRequestDto.getName());
-        if (authorRequestDto.getZipcodeId() != null) {
-            Zipcode zipcode = zipcodeService.getZipcode(authorRequestDto.getZipcodeId());
-            authorToEdit.setZipcode(zipcode);
-        }
-        return mapper.authorToAuthorResponseDto(authorToEdit);
-    }
-*/
+
         
 

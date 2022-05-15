@@ -8,11 +8,14 @@ public class FullPersonMapper {
     
     private PersonaMapper perMapper;
     
-    public PersonFullDTO responsetFullPerson (Person pers){
+    public PersonFullDTO responsetFullPerson (Person pers, Project proy){
         
        PersonFullDTO persFullDto = new PersonFullDTO();
        
-       persFullDto.setId(pers.getId_person());
+      // persFullDto.setId(pers.getId_person());
+      // persFullDto.setP
+     //  persFullDto
+       
        //persFullDto.setName_project(pers.getProject());
        
        return persFullDto;

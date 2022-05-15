@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ProjectMapper {
+   
+    
     
     public Project requestProject (ProjectDTO proyDto){
         
@@ -36,29 +38,6 @@ public class ProjectMapper {
         proyDto.setPerson(proy.getPerson());
         
         return proyDto;
- 
-    }
-    
-    public List<ProjectDTO> ResponselistProject(Project proy) {
-        
-        
-        List<ProjectDTO> listProyDto = new ArrayList<>();
-         
-        for(int i = 0; i == 3; i++)
-        
-{       ProjectDTO proyDto = new ProjectDTO();
-        Person person = new Person();
-
-        proyDto.setId_project(proy.getId_project());
-        proyDto.setName_project(proy.getName_project());
-        proyDto.setDescription(proy.getDescription());
-        proyDto.setLogo_img(proy.getLogo_img());
-        proyDto.setLink_project(proy.getLink_project());
-        proyDto.setPerson(proy.getPerson());
-        
-        listProyDto.add(proyDto);
-}
-        return listProyDto;
              
     }
 }

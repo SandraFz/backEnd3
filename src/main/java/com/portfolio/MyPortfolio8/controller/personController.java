@@ -55,26 +55,11 @@ public class personController {
         List<PersonDTO> listPersDto = persoServ.listPerson();
         return ResponseEntity.status(HttpStatus.OK).body(listPersDto);
     }
-     
-    /*
-    @GetMapping("/list/person")
-    @ResponseBody
-    public List<Person> seeListPerson(){  
-        return persoServ.seeListPerson(); 
-    }
-    */
     
     @DeleteMapping("delete/{id}")
     public void deletePerson(@PathVariable Long id){
         persoServ.deletePerson(id);
     }
-    
-    /*
-    @DeleteMapping("/delete/person/{id}")
-    public void deletePerson(@PathVariable Long id){
-        persoServ.deletePerson(id);
-    }
-    */
     
     @GetMapping("/find/{id}")
     public ResponseEntity<PersonDTO> findPerson(@PathVariable Long id){
@@ -92,9 +77,9 @@ public class personController {
     */
     
     @PutMapping("edit/{id}")
-    public ResponseEntity<PersonDTO> editPerson(@RequestBody @PathVariable Long id){
+    public ResponseEntity<PersonDTO> editPerson(@PathVariable Long id, @RequestBody PersonDTO persDto){
         
-        return ResponseEntity.status(HttpStatus.OK).body(persoServ.editPerson(id));
+        return ResponseEntity.status(HttpStatus.OK).body(persoServ.editPerson(id, persDto));
     }
     
     /*

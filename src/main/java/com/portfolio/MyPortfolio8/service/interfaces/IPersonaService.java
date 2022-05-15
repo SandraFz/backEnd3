@@ -11,6 +11,6 @@ public interface IPersonaService {
     public List<PersonDTO> listPerson();
     public void deletePerson(Long id);
     public PersonDTO findPerson(Long id);
-    public PersonDTO editPerson(Long id);
+    public PersonDTO editPerson(Long id, PersonDTO persDto);
     
 }

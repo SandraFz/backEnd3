@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,23 +35,35 @@ public class projectController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newProyDto);
     }
     
-    @GetMapping("/list")
+    @GetMapping("/list/{id}")
     @ResponseBody
-    public ResponseEntity<List<ProjectDTO>> listProject(Long id){
+    public ResponseEntity<List<ProjectDTO>> listProject(@PathVariable Long id){
          
-       List<ProjectDTO> listProyDto = proyServ.listProject(id);
+        List<ProjectDTO> listProyDto = proyServ.listProject(id);
         
-        return ResponseEntity.status(HttpStatus.OK).body(listProyDto);
-             
-        
-        /*
-        @GetMapping("/list/person")
-    @ResponseBody
-    public List<Person> seeListPerson(){  
-        return persoServ.seeListPerson(); 
+        return ResponseEntity.status(HttpStatus.OK).body(listProyDto);   
     }
-        */
+    
+    @GetMapping("find/{id}")
+    public ResponseEntity<ProjectDTO> findProject(@PathVariable Long id){
         
+        ProjectDTO proyDto = proyServ.findProject(id);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(proyDto);
+    }
+    
+    @DeleteMapping("delete/{id}")
+    public void deleteProject (@PathVariable Long id){
+        proyServ.deleteProject(id);
+    }
+    
+    @PutMapping("edit/{id}")
+    public ResponseEntity<ProjectDTO> editProject(@PathVariable Long id){
+        
+        ProjectDTO editedProyDto = proyServ.editProject(id);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(editedProyDto);
     }
     
 }
+

@@ -40,53 +40,37 @@ public class ProjectService implements IProjectService {
        // Person pers = persRepo.findAll().get(0);
         Person pers = persRepo.getById(id);
         pers.getProject().add(newProy);
+        persRepo.saveAndFlush(pers);
         
         ProjectDTO newProyDto = mapper.responseProject(newProy);
         
         return newProyDto;
-        
     }
-
-    @Override
-    public List<ProjectDTO> listProject(Long id) {
-        
-        List<ProjectDTO> listProyDto = new ArrayList<>();
-        persRepo.findById(id);
-        
-        for(int i = 0; i == 3; i++){       
-            
-            ProjectDTO proyDto = new ProjectDTO();
-        /*    
-            Person person = mapperPer.responsePerson(pers);
-           
-
-        proyDto.setId_project(proy.getId_project());
-        proyDto.setName_project(proy.getName_project());
-        proyDto.setDescription(proy.getDescription());
-        proyDto.setLogo_img(proy.getLogo_img());
-        proyDto.setLink_project(proy.getLink_project());
-        proyDto.setPerson(proy.getPerson());
-        
-        listProyDto.add(proyDto);*/
-}
-        return listProyDto;
-             
-    }
-
-    /*
-    public static List<ProjectDTO> listProjects(List<Project> Projects){
-        List<AuthorResponseDto> authorResponseDtos = new ArrayList<>();
-        for (Author author: authors) {
-            authorResponseDtos.add(authorToAuthorResponseDto(author));
-        }
-        return authorResponseDtos;
-    }
-    */
-    /*
     
     @Override
-    public Project findProject(Long id) {
-        return proServ.findById(id).orElse(null);
+    public List<ProjectDTO> listProject(Long id) {
+       
+        Person pers = persRepo.getById(id);
+        List<Project> listProy = (List) pers.getProject();
+        
+        List<ProjectDTO> listProyDto = new ArrayList();
+        
+        for(Project proy: listProy){
+            
+        ProjectDTO proyDto = mapper.responseProject(proy);
+        listProyDto.add(proyDto);
+        
+        }
+         return listProyDto;
+    }
+       
+    @Override
+    public ProjectDTO findProject(Long id) {
+        
+        Project proy = proServ.getById(id);
+        ProjectDTO proyDto = mapper.responseProject(proy);
+        
+        return proyDto;
     }
 
     @Override
@@ -95,24 +79,13 @@ public class ProjectService implements IProjectService {
     }
 
     @Override
-    public Project editProject(Project pro) {
-        return proServ.saveAndFlush(pro);
-    }*/
-
-    @Override
-    public Project findProject(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ProjectDTO editProject(Long id) {
+        
+        Project proy = proServ.getById(id);
+        Project editedProyDto = proServ.saveAndFlush(proy);
+        ProjectDTO proyDto = mapper.responseProject(editedProyDto);
+        
+        return proyDto;
     }
 
-    @Override
-    public void deleteProject(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Project editProject(Project pro) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    
 }
