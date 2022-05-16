@@ -1,7 +1,6 @@
 package com.portfolio.MyPortfolio8.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -43,15 +42,19 @@ public class Person {
     /*@OneToOne*/
     
     @OneToMany(cascade = CascadeType.ALL) 
-    private List<Project> project = new ArrayList<>();
-    /*@OneToMany(mappedBy="person")
+    private List<Project> project; //Recordar que estaba instanciado innecesariamente cuando hice la prueba e igual funcionó.
+                                    //= new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Experience> experience;
-    @OneToMany(mappedBy="person")
+    
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Study> study;
-    @OneToMany(mappedBy="person")
+    
+    @OneToMany(cascade  = CascadeType.ALL)
     private List<Skill> skills;
-    @OneToMany(mappedBy="person")
-    private List<SocialMedia> soc_med;*/
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<SocialMedia> soc_med;
     
     @JsonManagedReference
         public List<Project> getProject() {

@@ -1,6 +1,5 @@
 package com.portfolio.MyPortfolio8.controller;
 
-import com.portfolio.MyPortfolio8.dto.PersonFullDTO;
 import com.portfolio.MyPortfolio8.dto.PersonDTO;
 import com.portfolio.MyPortfolio8.model.Experience;
 import com.portfolio.MyPortfolio8.model.Person;
@@ -77,9 +76,10 @@ public class personController {
     */
     
     @PutMapping("edit/{id}")
-    public ResponseEntity<PersonDTO> editPerson(@PathVariable Long id, @RequestBody PersonDTO persDto){
+    public void editPerson(@PathVariable Long id, @RequestBody PersonDTO persDto){
         
-        return ResponseEntity.status(HttpStatus.OK).body(persoServ.editPerson(id, persDto));
+        persoServ.editPerson(id, persDto);
+        //return ResponseEntity.status(HttpStatus.OK).body(persoServ.editPerson(id, persDto));
     }
     
     /*

@@ -2,6 +2,7 @@ package com.portfolio.MyPortfolio8.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,18 +21,19 @@ public class SocialMedia {
     private String logo_SM;
     @Column(name="link_SM")
     private String link_SM;
-    /*@ManyToOne
+    
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="person")
-    private Long person;*/
+    private Person person;
 
     public SocialMedia() {
     }
 
-    public SocialMedia(String name_SM, String logo_SM, String link_SM) {
+    public SocialMedia(String name_SM, String logo_SM, String link_SM, Person person) {
         this.name_SM = name_SM;
         this.logo_SM = logo_SM;
         this.link_SM = link_SM;
-        //this.person = person;
+        this.person = person;
     }
     
     

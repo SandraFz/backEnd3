@@ -1,17 +1,13 @@
 package com.portfolio.MyPortfolio8.mapper;
 
 import com.portfolio.MyPortfolio8.dto.ProjectDTO;
-import com.portfolio.MyPortfolio8.model.Person;
 import com.portfolio.MyPortfolio8.model.Project;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProjectMapper {
-   
     
-    
+    //Recibe un DTO y devuelve una entidad.
     public Project requestProject (ProjectDTO proyDto){
         
         Project project = new Project();
@@ -26,6 +22,7 @@ public class ProjectMapper {
    
     }
     
+    //Recibe una entidad y devuelve un DTO.
     public ProjectDTO responseProject (Project proy) {
         
         ProjectDTO proyDto = new ProjectDTO();

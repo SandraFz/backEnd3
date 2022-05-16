@@ -1,6 +1,5 @@
 package com.portfolio.MyPortfolio8.service;
 
-import com.portfolio.MyPortfolio8.dto.PersonFullDTO;
 import com.portfolio.MyPortfolio8.dto.ProjectDTO;
 import com.portfolio.MyPortfolio8.mapper.PersonaMapper;
 import com.portfolio.MyPortfolio8.mapper.ProjectMapper;

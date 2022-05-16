@@ -2,6 +2,7 @@ package com.portfolio.MyPortfolio8.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,14 +32,15 @@ public class Experience {
     private String logo_experience;
     @Column(name="link_exp")
     private String link_experience;
-    /*@ManyToOne
-    @JoinColumn(name="person")
-    private Long person;*/
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="pers-experience")
+    private Person person;
 
     public Experience() {
     }
 
-    public Experience(Long id, String company, String asignamet, int anio_salida, int duracion, String logo_experience, String link_experience, Long person) {
+    public Experience(Long id, String company, String asignamet, int anio_salida, int duracion, String logo_experience, String link_experience, Person person) {
         this.id = id;
         this.company = company;
         this.asignamet = asignamet;
@@ -46,8 +48,10 @@ public class Experience {
         this.duracion = duracion;
         this.logo_experience = logo_experience;
         this.link_experience = link_experience;
-        //this.person = person;
+        this.person = person;
     }
+
+    
 
     
 

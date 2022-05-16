@@ -1,7 +1,6 @@
 package com.portfolio.MyPortfolio8.service.interfaces;
 
 import com.portfolio.MyPortfolio8.dto.PersonDTO;
-import com.portfolio.MyPortfolio8.dto.PersonFullDTO;
 import com.portfolio.MyPortfolio8.dto.ProjectDTO;
 import com.portfolio.MyPortfolio8.model.Person;
 import com.portfolio.MyPortfolio8.model.Project;

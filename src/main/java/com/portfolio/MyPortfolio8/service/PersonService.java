@@ -62,16 +62,32 @@ public class PersonService implements IPersonaService {
 
     //Recibe un DTO, la convierte en Entity, guarda el cambio y la devuelve como DTO.
     @Override
-    public PersonDTO editPerson (Long id, PersonDTO persDto){
+    public void editPerson (Long id, PersonDTO persDto){
         
+        //Person person = ​PersoRepo.​getPersonEdit​(​id​);
         
-        Person pers = persoRepo.getById(id);
+        Person person = persoRepo.getById(id);
+        
+        person.setName(persDto.getName());
+        person.setLastName(persDto.getLastName());
+        person.setAge(persDto.getAge());
+        person.setProfession(persDto.getProfession());
+        person.setOrigin(persDto.getOrigin());
+        person.setPresentation(persDto.getPresentation());
+        person.setProfessional_photo(persDto.getProfessional_photo());
+        person.setEmail(persDto.getEmail());
+        person.setProject(persDto.getProject());
+        
+        Person editedPers = persoRepo.saveAndFlush(person);
+      
+        
+        /*Person pers = persoRepo.getById(id);
         Person toEditPers = mapper.requestPerson(persDto);
         Person updatePers = persoRepo.save(toEditPers);
         PersonDTO updatePersDto = mapper.responsePerson(updatePers);
         
         return updatePersDto;
-        
+        */
         
        /*
          Person pers = persoRepo.getById(id);

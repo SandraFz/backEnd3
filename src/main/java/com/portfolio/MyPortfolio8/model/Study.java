@@ -2,6 +2,7 @@
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,14 +32,15 @@ public class Study {
     private String logo_studies;
     @Column(name="link_studies")
     private String link_studies;
-    /*@ManyToOne
+    
+    @ManyToOne(fetch = FetchType.LAZY )
     @JoinColumn(name="person")
-    private Long person;*/
+    private Person person;
 
     public Study() {
     }
 
-    public Study(Long id, String insti_studios, String title_studies, int anio_iniStudy, int anio_end, String logo_studies, String link_studies, Long person) {
+    public Study(Long id, String insti_studios, String title_studies, int anio_iniStudy, int anio_end, String logo_studies, String link_studies, Person person) {
         this.id = id;
         this.insti_studios = insti_studios;
         this.title_studies = title_studies;
@@ -46,10 +48,9 @@ public class Study {
         this.anio_end = anio_end;
         this.logo_studies = logo_studies;
         this.link_studies = link_studies;
-        //this.person = person;
+        this.person = person;
     }
 
     
-
     
 }
