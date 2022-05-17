@@ -1,16 +1,13 @@
 package com.portfolio.MyPortfolio8.service;
 
 import com.portfolio.MyPortfolio8.dto.PersonDTO;
-import com.portfolio.MyPortfolio8.dto.ProjectDTO;
 import com.portfolio.MyPortfolio8.mapper.PersonaMapper;
 import com.portfolio.MyPortfolio8.service.interfaces.IPersonaService;
 import com.portfolio.MyPortfolio8.model.Person;
-import com.portfolio.MyPortfolio8.model.Project;
 import com.portfolio.MyPortfolio8.repository.IPersonRepository;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +18,7 @@ public class PersonService implements IPersonaService {
     
     @Autowired
     public PersonaMapper mapper;
+    
    
     //Recibe un DTO, crea una nueva Persona y la devuelve en forma de DTO.
     @Override
@@ -60,11 +58,9 @@ public class PersonService implements IPersonaService {
         return persDto;
     }
 
-    //Recibe un DTO, la convierte en Entity, guarda el cambio y la devuelve como DTO.
+    //Recibe un DTO, se setean sus propiedades a la entidad correspondiente según el id y guarda los cambios.
     @Override
     public void editPerson (Long id, PersonDTO persDto){
-        
-        //Person person = ​PersoRepo.​getPersonEdit​(​id​);
         
         Person person = persoRepo.getById(id);
         
@@ -79,35 +75,6 @@ public class PersonService implements IPersonaService {
         person.setProject(persDto.getProject());
         
         Person editedPers = persoRepo.saveAndFlush(person);
-      
-        
-        /*Person pers = persoRepo.getById(id);
-        Person toEditPers = mapper.requestPerson(persDto);
-        Person updatePers = persoRepo.save(toEditPers);
-        PersonDTO updatePersDto = mapper.responsePerson(updatePers);
-        
-        return updatePersDto;
-        */
-        
-       /*
-         Person pers = persoRepo.getById(id);
-        Person editedPers = mapper.requestPerson(persDto);
-        
-        PersonDTO editedPersDto = mapper.responsePerson(editedPers);
-        
-        return editedPersDto;
-        */
-        
-       
-        /*
-       Person pers = persoRepo.getById(id); 
-        Person editedPers = persoRepo.save(pers);
-        PersonDTO editedPersDto = mapper.responsePerson(editedPers);
-     
-        return editedPersDto;
-       */
-        
-        
     }
 }
     

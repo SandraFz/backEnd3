@@ -29,14 +29,13 @@ public class ProjectService implements IProjectService {
     IPersonRepository persRepo;
     
    
-    //CREA un nuevo proyecto y lo vincula al id que se pasa como parámetro
+    //CREA un nuevo proyecto y lo vincula a la persona del id  que se pasa como parámetro.
     @Override
     public ProjectDTO createProject(ProjectDTO proyDto, Long id) {
         
         Project proy = mapper.requestProject(proyDto);
         Project newProy = proServ.save(proy);
         
-       // Person pers = persRepo.findAll().get(0);
         Person pers = persRepo.getById(id);
         pers.getProject().add(newProy);
         persRepo.saveAndFlush(pers);
@@ -46,6 +45,7 @@ public class ProjectService implements IProjectService {
         return newProyDto;
     }
     
+    //Arroja la lista de proyectos de la persona cuyo id se pasa por parámetro.
     @Override
     public List<ProjectDTO> listProject(Long id) {
        
@@ -63,6 +63,7 @@ public class ProjectService implements IProjectService {
          return listProyDto;
     }
        
+    //Busca un proyecto por su propio id.
     @Override
     public ProjectDTO findProject(Long id) {
         
@@ -72,19 +73,29 @@ public class ProjectService implements IProjectService {
         return proyDto;
     }
 
+    //Elimina un proyecto por su propio id.
     @Override
     public void deleteProject(Long id) {
         proServ.deleteById(id);
     }
 
+    //Edita un proyecto.
     @Override
-    public ProjectDTO editProject(Long id) {
+    public ProjectDTO editProject(Long id, ProjectDTO proyDto) {
         
-        Project proy = proServ.getById(id);
-        Project editedProyDto = proServ.saveAndFlush(proy);
-        ProjectDTO proyDto = mapper.responseProject(editedProyDto);
+        Project project = proServ.getById(id);
         
-        return proyDto;
+        project.setName_project (proyDto.getName_project());
+        project.setDescription(proyDto.getDescription());
+        project.setLogo_img(proyDto.getLogo_img());
+        project.setLink_project(proyDto.getLink_project());
+        project.setPerson(proyDto.getPerson());
+        
+        Project editedProy = proServ.saveAndFlush(project);
+        ProjectDTO editedProyDto = mapper.responseProject(editedProy);
+        
+        return editedProyDto;
     }
-
 }
+
+

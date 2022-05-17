@@ -1,14 +1,9 @@
 package com.portfolio.MyPortfolio8.controller;
 
 import com.portfolio.MyPortfolio8.dto.PersonDTO;
-import com.portfolio.MyPortfolio8.model.Experience;
-import com.portfolio.MyPortfolio8.model.Person;
-import com.portfolio.MyPortfolio8.model.Project;
-import com.portfolio.MyPortfolio8.service.PersonService;
 import com.portfolio.MyPortfolio8.service.interfaces.IExperienceService;
 import com.portfolio.MyPortfolio8.service.interfaces.IPersonaService;
 import com.portfolio.MyPortfolio8.service.interfaces.IProjectService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,8 +34,9 @@ public class personController {
     @Autowired
     private IProjectService proyServ;
     
+    
     //Crea una nueva persona.
-    @PostMapping("/create")
+    @PostMapping("/new")
     public ResponseEntity<PersonDTO> createPerson(@RequestBody PersonDTO persDto){
         
         PersonDTO newPersDto = persoServ.createPerson(persDto);
@@ -49,17 +45,18 @@ public class personController {
     
     //Arroja la lista de personas.
     @GetMapping("list")
-    //@ResponseBody
     public ResponseEntity<List<PersonDTO>> listPerson(){
         List<PersonDTO> listPersDto = persoServ.listPerson();
         return ResponseEntity.status(HttpStatus.OK).body(listPersDto);
     }
     
+    //Elimina una persona de la lista.
     @DeleteMapping("delete/{id}")
     public void deletePerson(@PathVariable Long id){
         persoServ.deletePerson(id);
     }
     
+    //Busca una persona de la lista.
     @GetMapping("/find/{id}")
     public ResponseEntity<PersonDTO> findPerson(@PathVariable Long id){
         PersonDTO persDto = persoServ.findPerson(id);
@@ -67,27 +64,11 @@ public class personController {
         return ResponseEntity.status(HttpStatus.OK).body(persDto);
     }
     
-    /*
-    @GetMapping("/find/person/{id}")
-    @ResponseBody
-    public Person findPerson(@PathVariable Long id){
-        return persoServ.findPerson(id);
-    }
-    */
-    
+    //Edita una persona.
     @PutMapping("edit/{id}")
     public void editPerson(@PathVariable Long id, @RequestBody PersonDTO persDto){
         
         persoServ.editPerson(id, persDto);
-        //return ResponseEntity.status(HttpStatus.OK).body(persoServ.editPerson(id, persDto));
     }
-    
-    /*
-    @PutMapping("/edit/person")
-    public Person editPerson(@RequestBody Person pers){
-        return persoServ.editPerson(pers);
-    }
-    */
-    
 }
     
