@@ -42,7 +42,7 @@ public class ExperienceService implements IExperienceService {
 
     //Arroja una lista de experiencias de la persona cuyo id se recibe por parámetro.
     @Override
-    public List<ExperienceDTO> ListExperience(Long id) {
+    public List<ExperienceDTO> listExperience(Long id) {
         
         Person pers = persoRepo.getById(id);
         List <Experience> listExp = (List) pers.getExperience();
@@ -93,7 +93,6 @@ public class ExperienceService implements IExperienceService {
         
         return editedExpDto;
     }
-    
 }
 
 

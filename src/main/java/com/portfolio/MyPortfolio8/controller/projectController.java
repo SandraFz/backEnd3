@@ -35,7 +35,6 @@ public class projectController {
     
     //Arroja una lista de proyectos de la persona cuyp id se pasa por parámetro.
     @GetMapping("/list/{id}")
-    @ResponseBody
     public ResponseEntity<List<ProjectDTO>> listProject(@PathVariable Long id){
          
         List<ProjectDTO> listProyDto = proyServ.listProject(id);

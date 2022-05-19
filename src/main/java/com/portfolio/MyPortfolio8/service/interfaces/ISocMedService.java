@@ -1,13 +1,13 @@
 package com.portfolio.MyPortfolio8.service.interfaces;
 
-import com.portfolio.MyPortfolio8.model.SocialMedia;
+import com.portfolio.MyPortfolio8.dto.SocialMediaDTO;
 import java.util.List;
 
 public interface ISocMedService {
 
-    public void createSocMedia(SocialMedia soc);
-    public List<SocialMedia> seeListSocMed();
-    public SocialMedia findSocMed(Long id);
+    public SocialMediaDTO createSocMedia(SocialMediaDTO smDto, Long id);
+    public List<SocialMediaDTO> listSocMed(Long id);
+    public SocialMediaDTO findSocMed(Long id);
     public void deleteSocMed(Long id);
-    public SocialMedia editSocMed(SocialMedia soc);
+    public SocialMediaDTO editSocMed(Long id, SocialMediaDTO sMedDto);
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public interface IExperienceService {
     
     public ExperienceDTO createExperience(ExperienceDTO expDto, Long id);
-    public List<ExperienceDTO> ListExperience(Long id);
+    public List<ExperienceDTO> listExperience(Long id);
     public ExperienceDTO findExperience(Long id);
     public void deleteExperience(Long id);
     public ExperienceDTO editExperience(Long id, ExperienceDTO expDto);
