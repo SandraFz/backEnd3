@@ -2,7 +2,9 @@ package com.portfolio.MyPortfolio8.mapper;
 
 import com.portfolio.MyPortfolio8.dto.StudyDTO;
 import com.portfolio.MyPortfolio8.model.Study;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StudyMapper {
     
     public Study requestStudy(StudyDTO stuDto){

@@ -2,7 +2,9 @@ package com.portfolio.MyPortfolio8.mapper;
 
 import com.portfolio.MyPortfolio8.dto.SkillDTO;
 import com.portfolio.MyPortfolio8.model.Skill;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SkillMapper {
 
     public Skill requestSkill (SkillDTO skDto){

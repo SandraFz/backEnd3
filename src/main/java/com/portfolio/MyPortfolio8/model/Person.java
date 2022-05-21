@@ -66,7 +66,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(Long id, String name, String lastName, int age, String profession, String origin, String presentation, String professional_photo, String email, List<Project> project) {
+    public Person(Long id_person, String name, String lastName, int age, String profession, String origin, String presentation, String professional_photo, String email, List<Project> project, List<Experience> experience, List<Study> study, List<Skill> skills, List<SocialMedia> soc_med) {
         this.id_person = id_person;
         this.name = name;
         this.lastName = lastName;
@@ -77,7 +77,13 @@ public class Person {
         this.professional_photo = professional_photo;
         this.email = email;
         this.project = project;
+        this.experience = experience;
+        this.study = study;
+        this.skills = skills;
+        this.soc_med = soc_med;
     }
+
+    
 
    
    

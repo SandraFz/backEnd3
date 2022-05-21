@@ -32,7 +32,7 @@ public class StudyController {
     }
 
     //Arroja la lista de estudios de la persona cuyo id se pasa por parámetro.
-    @GetMapping("list/{id]")
+    @GetMapping("list/{id}")
     public ResponseEntity<List<StudyDTO>> listStudies (@PathVariable Long id){
         
         List<StudyDTO> listStuDto = stuServ.listStudies(id);

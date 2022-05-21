@@ -2,7 +2,9 @@ package com.portfolio.MyPortfolio8.mapper;
 
 import com.portfolio.MyPortfolio8.dto.SocialMediaDTO;
 import com.portfolio.MyPortfolio8.model.SocialMedia;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SocialMediaMapper {
 
     public SocialMedia requestSocialMedia (SocialMediaDTO smDto){
