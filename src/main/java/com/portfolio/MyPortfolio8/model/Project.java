@@ -1,6 +1,7 @@
 package com.portfolio.MyPortfolio8.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,7 +36,8 @@ public class Project {
     private Person person;
 
     
-    @JsonBackReference
+    //@JsonBackReference
+   // @JsonManagedReference
     public Person getPerson() {
         return person;
     }

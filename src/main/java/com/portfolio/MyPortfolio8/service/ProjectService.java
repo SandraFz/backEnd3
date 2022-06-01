@@ -76,9 +76,17 @@ public class ProjectService implements IProjectService {
     //Elimina un proyecto por su propio id.
     @Override
     public void deleteProject(Long id) {
+        //proServ.deleteById(id);
+        
+        Project proy = proServ.getById(id);
+        Person pers = proy.getPerson();
+        
+        pers.getProject().remove(proy);
         proServ.deleteById(id);
+        
+        persRepo.saveAndFlush(pers);
     }
-
+        
     //Edita un proyecto.
     @Override
     public ProjectDTO editProject(Long id, ProjectDTO proyDto) {
