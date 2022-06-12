@@ -33,10 +33,11 @@ public class Project {
     
     @ManyToOne(fetch = FetchType.LAZY )
     @JoinColumn(name="person")
+    @JsonBackReference
     private Person person;
 
     
-    //@JsonBackReference
+    
    // @JsonManagedReference
     public Person getPerson() {
         return person;

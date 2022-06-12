@@ -1,7 +1,10 @@
 package com.portfolio.MyPortfolio8.dto;
 
+import com.portfolio.MyPortfolio8.model.Experience;
 import com.portfolio.MyPortfolio8.model.Project;
-import java.util.ArrayList;
+import com.portfolio.MyPortfolio8.model.Skill;
+import com.portfolio.MyPortfolio8.model.SocialMedia;
+import com.portfolio.MyPortfolio8.model.Study;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,4 +22,8 @@ import lombok.Setter;
     private String professional_photo;
     private String email;
     private List<Project> project;
+    private List<Experience> experience;
+    private List<Study> studies;
+    private List<Skill> skills;
+    private List<SocialMedia> socMed;
 }

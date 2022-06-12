@@ -43,27 +43,21 @@ public class Person {
     
     /*@OneToOne*/
     
-    @OneToMany(cascade = CascadeType.ALL) 
+    @OneToMany(mappedBy="person", cascade = CascadeType.ALL) 
+    @JsonManagedReference
     private List<Project> project = new ArrayList<>(); //Recordar que estaba instanciado innecesariamente cuando hice la prueba e igual funcionó.
                                     //= new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Experience> experience;
+    private List<Experience> experience = new ArrayList<>();
     
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Study> study;
+    private List<Study> study = new ArrayList<>();
     
     @OneToMany(cascade  = CascadeType.ALL)
     private List<Skill> skills;
     
     @OneToMany(cascade = CascadeType.ALL)
     private List<SocialMedia> soc_med;
-    
-    //@JsonManagedReference
-    @JsonBackReference
-        public List<Project> getProject() {
-        return project;
-    }
-    
     
 
     public Person() {
@@ -86,6 +80,28 @@ public class Person {
         this.soc_med = soc_med;
     }
 
+    
+    //@JsonBackReference
+        public List<Project> getProject() {
+        return project;
+    }
+
+    public List<Experience> getExperience() {
+        return experience;
+    }
+
+    //public List<Study> getStudy() {
+       // return study;
+    //}
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public List<SocialMedia> getSoc_med() {
+        return soc_med;
+    }
+    
     
 
    
