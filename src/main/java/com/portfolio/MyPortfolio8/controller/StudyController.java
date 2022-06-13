@@ -1,6 +1,7 @@
 package com.portfolio.MyPortfolio8.controller;
 
 import com.portfolio.MyPortfolio8.dto.StudyDTO;
+import com.portfolio.MyPortfolio8.model.Person;
 import com.portfolio.MyPortfolio8.service.StudiesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +63,10 @@ public class StudyController {
         StudyDTO editedStuDto = stuServ.editStudy(id, stuDto);
         return ResponseEntity.status(HttpStatus.OK).body(editedStuDto);
     }
+    
+    /*@DeleteMapping("/borrar/{id}")
+    public void findOwner(@PathVariable Long id){
+        stuServ.findOwner(id);
+    }*/
 }
 

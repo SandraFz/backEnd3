@@ -77,7 +77,7 @@ public class ProjectService implements IProjectService {
     @Override
     public void deleteProject(Long idPers, Long idElem) {
         
-        Person pers = persRepo.getById(idPers);
+        Person pers = persRepo.getById(idPers); 
         List<Project> listProy = pers.getProject();
         Project proy = proServ.getById(idElem);
         listProy.remove(proy);

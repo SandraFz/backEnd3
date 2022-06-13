@@ -52,7 +52,7 @@ public class projectController {
     }
     
     //Elimina un proyecto según su propio id.
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("delete/{idPers}/{idElem}")
     public void deleteProject (@PathVariable Long idPers, @PathVariable Long idElem){
         proyServ.deleteProject(idPers, idElem);
     }

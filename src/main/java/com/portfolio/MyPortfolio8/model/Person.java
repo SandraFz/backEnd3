@@ -1,7 +1,8 @@
 package com.portfolio.MyPortfolio8.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -18,6 +19,9 @@ import lombok.Setter;
 @Setter @Getter
 @Entity
 @Table(name="persona")
+//@JsonIdentityInfo(
+//	generator = ObjectIdGenerators.PropertyGenerator.class, 
+//	property = "id")
 public class Person {
     
     @Id
@@ -43,9 +47,9 @@ public class Person {
     
     /*@OneToOne*/
     
-    @OneToMany(mappedBy="person", cascade = CascadeType.ALL) 
-    @JsonManagedReference
-    private List<Project> project = new ArrayList<>(); //Recordar que estaba instanciado innecesariamente cuando hice la prueba e igual funcionó.
+    //@JsonManagedReference
+    @OneToMany(/*mappedBy="person",*/ cascade = CascadeType.ALL, orphanRemoval = true) //@JsonManagedReference
+    private List<Project> project; //new ArrayList<>(); //Recordar que estaba instanciado innecesariamente cuando hice la prueba e igual funcionó.
                                     //= new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL)
     private List<Experience> experience = new ArrayList<>();
@@ -82,6 +86,7 @@ public class Person {
 
     
     //@JsonBackReference
+    
         public List<Project> getProject() {
         return project;
     }
@@ -101,12 +106,5 @@ public class Person {
     public List<SocialMedia> getSoc_med() {
         return soc_med;
     }
-    
-    
-
-   
-   
-
-   
     
 }

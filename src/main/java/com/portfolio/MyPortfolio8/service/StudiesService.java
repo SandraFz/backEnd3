@@ -95,6 +95,17 @@ public class StudiesService implements IStudiesService {
         
         return editedStuDto;
     }
+    
+    //Devuelve la persona a la que pertence por el id del elemento.
+   /* @Override
+    public void findOwner(Long id){
+        Study study = stuRepo.getById(id);
+        Person person = study.getPerson();
+        Long id = person.getId_person();
+        List<Study> listStu = person.getStudy();
+        listStu.remove(study);
+        persoRepo.saveAndFlush(person);
+    }*/
 }
 
 
