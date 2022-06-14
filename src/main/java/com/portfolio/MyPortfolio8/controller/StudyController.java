@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/studies")
 public class StudyController {
     
@@ -49,10 +51,10 @@ public class StudyController {
     }
     
     //Elimina una experiencia según su propio id.
-    @DeleteMapping("/delete/{id}")
-    public void deleteStudy (@PathVariable Long id){
+    @DeleteMapping("/delete/{idPers}/{idElem}")
+    public void deleteStudy (@PathVariable Long idPers, @PathVariable Long idElem){
         
-        stuServ.deleteStudy(id);
+        stuServ.deleteStudy(idPers, idElem);
     }
     
     //Edita una experiencia según su propio id.
@@ -64,9 +66,5 @@ public class StudyController {
         return ResponseEntity.status(HttpStatus.OK).body(editedStuDto);
     }
     
-    /*@DeleteMapping("/borrar/{id}")
-    public void findOwner(@PathVariable Long id){
-        stuServ.findOwner(id);
-    }*/
 }
 

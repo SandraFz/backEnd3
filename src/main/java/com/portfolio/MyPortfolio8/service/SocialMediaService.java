@@ -19,10 +19,10 @@ public class SocialMediaService implements ISocMedService {
     public ISocMedRepository sMedServ;
     
     @Autowired
-    public IPersonRepository persoRepo;
+    public SocialMediaMapper mapper;
     
     @Autowired
-    public SocialMediaMapper mapper;
+    public IPersonRepository persoRepo;
 
     //Agrega una nueva red social y lo vincula a la persona cuyo id se pasa por parámetro.
     @Override
@@ -69,8 +69,13 @@ public class SocialMediaService implements ISocMedService {
 
     //Elimina una red social por su id.
     @Override
-    public void deleteSocMed(Long id) {
-        sMedServ.deleteById(id);
+    public void deleteSocMed(Long idPers, Long idElem) {
+        
+        Person pers = persoRepo.getById(idPers);
+        List<SocialMedia> listSocMed = pers.getSoc_med();
+        SocialMedia socMed = sMedServ.getById(idElem);
+        listSocMed.remove(socMed);
+        persoRepo.saveAndFlush(pers);
     }
 
     @Override

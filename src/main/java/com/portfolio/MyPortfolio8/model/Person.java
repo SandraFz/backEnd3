@@ -19,9 +19,6 @@ import lombok.Setter;
 @Setter @Getter
 @Entity
 @Table(name="persona")
-//@JsonIdentityInfo(
-//	generator = ObjectIdGenerators.PropertyGenerator.class, 
-//	property = "id")
 public class Person {
     
     @Id
@@ -47,20 +44,19 @@ public class Person {
     
     /*@OneToOne*/
     
-    //@JsonManagedReference
-    @OneToMany(/*mappedBy="person",*/ cascade = CascadeType.ALL, orphanRemoval = true) //@JsonManagedReference
-    private List<Project> project; //new ArrayList<>(); //Recordar que estaba instanciado innecesariamente cuando hice la prueba e igual funcionó.
-                                    //= new ArrayList<>();
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Experience> experience = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) 
+    private List<Project> project; 
     
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Study> study = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Experience> experience;
     
-    @OneToMany(cascade  = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Study> study;
+    
+    @OneToMany(cascade  = CascadeType.ALL, orphanRemoval = true)
     private List<Skill> skills;
     
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SocialMedia> soc_med;
     
 
@@ -82,29 +78,6 @@ public class Person {
         this.study = study;
         this.skills = skills;
         this.soc_med = soc_med;
-    }
-
-    
-    //@JsonBackReference
-    
-        public List<Project> getProject() {
-        return project;
-    }
-
-    public List<Experience> getExperience() {
-        return experience;
-    }
-
-    //public List<Study> getStudy() {
-       // return study;
-    //}
-
-    public List<Skill> getSkills() {
-        return skills;
-    }
-
-    public List<SocialMedia> getSoc_med() {
-        return soc_med;
     }
     
 }

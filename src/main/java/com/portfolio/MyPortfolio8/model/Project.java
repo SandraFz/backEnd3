@@ -21,9 +21,6 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 @Table(name="project")
-//@JsonIdentityInfo(
-//	generator = ObjectIdGenerators.PropertyGenerator.class, 
-//	property = "id")
 public class Project {
     
     @Id
@@ -38,15 +35,9 @@ public class Project {
     @Column(name="link_proy")
     private String link_project;
     
-    //@JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY )
-    @JoinColumn(name = "person_id"/*, referencedColumnName="person_id", foreignKey = @ForeignKey(name = "fk_person_project")*/)//@JsonBackReference
+    @JoinColumn(name = "person")
     private Person person;
-
-   
-    public Person getPerson() {
-        return person;
-    }
 
     public Project() {
     }
@@ -59,12 +50,5 @@ public class Project {
         this.link_project = link_project;
         this.person = person;
     }
-
-    //@JsonProperty
-    //public Long getParentId() {
-    //return person == null ? null : person.getId_person();
-//}
-
-   
-    
+ 
 }

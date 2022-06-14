@@ -9,7 +9,6 @@ public interface IStudiesService {
     public StudyDTO createStudy(StudyDTO stuDto, Long id);
     public List<StudyDTO> listStudies(Long id);
     public StudyDTO findStudy(Long id);
-    public void deleteStudy(Long id);
+    public void deleteStudy(Long idPers, Long idElem);
     public StudyDTO editStudy(Long id, StudyDTO stuDto);
-   // public void findOwner(Long id);
 }

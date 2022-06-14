@@ -18,11 +18,11 @@ public class SkillsService implements ISkillsService {
     @Autowired
     public ISkillsRepository skiServ;
     
-    @Autowired 
-    public IPersonRepository persoRepo;
-    
     @Autowired
     public SkillMapper mapper;
+    
+    @Autowired 
+    public IPersonRepository persoRepo;
     
     //Crea un nuevo skill y lo vincula a la persona cuyo id se pasa por parámetro.
     @Override
@@ -69,8 +69,13 @@ public class SkillsService implements ISkillsService {
     
     //Elimina un skill por su propio id.
     @Override
-    public void deleteSkill(Long id) {
-        skiServ.deleteById(id);
+    public void deleteSkill(Long idPers, Long idElem) {
+        
+        Person pers = persoRepo.getById(idPers);
+        List<Skill> listSkills = pers.getSkills();
+        Skill skill = skiServ.getById(idElem);
+        listSkills.remove(skill);
+        persoRepo.saveAndFlush(pers);
     }
 
     @Override

@@ -34,7 +34,7 @@ public class Experience {
     private String link_experience;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="pers-experience")
+    @JoinColumn(name="person")
     private Person person;
 
     public Experience() {

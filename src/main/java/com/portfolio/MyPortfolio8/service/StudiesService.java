@@ -19,11 +19,10 @@ public class StudiesService implements IStudiesService {
     public IStudiesRepository stuRepo;
     
     @Autowired
-    public IPersonRepository persoRepo;
+    public StudyMapper mapper;
     
     @Autowired
-    public StudyMapper mapper;
-
+    public IPersonRepository persoRepo;
     
     //Crea un nuevo estudio y lo vincula a la persona cuyo id se pasa por parámetro.
     @Override
@@ -71,8 +70,13 @@ public class StudiesService implements IStudiesService {
     
     //Elimina un estudio por su propio id.
     @Override
-    public void deleteStudy(Long id) {
-        stuRepo.deleteById(id);
+    public void deleteStudy(Long idPers, Long idElem) {
+        
+        Person pers = persoRepo.getById(idPers);
+        List<Study> listStudies = pers.getStudy();
+        Study study = stuRepo.getById(idElem);
+        listStudies.remove(study);
+        persoRepo.saveAndFlush(pers);
     }
     
     //Edita un estudio y lo devuelve convertido en DTO.
@@ -96,16 +100,6 @@ public class StudiesService implements IStudiesService {
         return editedStuDto;
     }
     
-    //Devuelve la persona a la que pertence por el id del elemento.
-   /* @Override
-    public void findOwner(Long id){
-        Study study = stuRepo.getById(id);
-        Person person = study.getPerson();
-        Long id = person.getId_person();
-        List<Study> listStu = person.getStudy();
-        listStu.remove(study);
-        persoRepo.saveAndFlush(person);
-    }*/
 }
 
 

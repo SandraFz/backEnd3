@@ -48,10 +48,10 @@ public class SkillController {
     }
     
     //Elimina una habilidad según su propio id.
-    @DeleteMapping("/delete/{id}")
-    public void deleteSkill (@PathVariable Long id){
+    @DeleteMapping("/delete/{idPers}/{idElem}")
+    public void deleteSkill (@PathVariable Long idPers, @PathVariable Long idElem){
         
-        skServ.deleteSkill(id);
+        skServ.deleteSkill(idPers, idElem);
     }
     
     //Edita una habilidad según su propio id.

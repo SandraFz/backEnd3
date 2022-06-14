@@ -22,13 +22,9 @@ public class ProjectService implements IProjectService {
     @Autowired
     public ProjectMapper mapper;
     
-    @Autowired
-    public PersonaMapper mapperPer;
-    
     @Autowired 
-    IPersonRepository persRepo;
+    IPersonRepository persoRepo;
     
-   
     //CREA un nuevo proyecto y lo vincula a la persona del id  que se pasa como parámetro.
     @Override
     public ProjectDTO createProject(ProjectDTO proyDto, Long id) {
@@ -36,9 +32,9 @@ public class ProjectService implements IProjectService {
         Project proy = mapper.requestProject(proyDto);
         Project newProy = proServ.save(proy);
         
-        Person pers = persRepo.getById(id);
+        Person pers = persoRepo.getById(id);
         pers.getProject().add(newProy);
-        persRepo.saveAndFlush(pers);
+        persoRepo.saveAndFlush(pers);
         
         ProjectDTO newProyDto = mapper.responseProject(newProy);
         
@@ -49,7 +45,7 @@ public class ProjectService implements IProjectService {
     @Override
     public List<ProjectDTO> listProject(Long id) {
        
-        Person pers = persRepo.getById(id);
+        Person pers = persoRepo.getById(id);
         List<Project> listProy = (List) pers.getProject();
         
         List<ProjectDTO> listProyDto = new ArrayList();
@@ -77,26 +73,12 @@ public class ProjectService implements IProjectService {
     @Override
     public void deleteProject(Long idPers, Long idElem) {
         
-        Person pers = persRepo.getById(idPers); 
+        Person pers = persoRepo.getById(idPers); 
         List<Project> listProy = pers.getProject();
         Project proy = proServ.getById(idElem);
         listProy.remove(proy);
-        persRepo.saveAndFlush(pers);
+        persoRepo.saveAndFlush(pers);
     }
-
-    //Elimina un proyecto por su propio id.
-    /*@Override
-    public void deleteProject(Long id) {
-        //proServ.deleteById(id);
-        
-        Project proy = proServ.getById(id);
-        Person pers = proy.getPerson();
-        
-        pers.getProject().remove(proy);
-        proServ.deleteById(id);
-        
-        persRepo.saveAndFlush(pers);
-    }*/
         
     //Edita un proyecto.
     @Override

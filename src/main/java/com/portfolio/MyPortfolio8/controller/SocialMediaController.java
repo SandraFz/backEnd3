@@ -48,10 +48,10 @@ public class SocialMediaController {
     }
     
     //Elimina un social media según su propio id.
-    @DeleteMapping("/delete/{id}")
-    public void deleteSocMed (@PathVariable Long id){
+    @DeleteMapping("/delete/{idPers}/{idElem}")
+    public void deleteSocMed (@PathVariable Long idPers, @PathVariable Long idElem){
         
-        sMedServ.deleteSocMed(id);
+        sMedServ.deleteSocMed(idPers, idElem);
     }
     
     //Edita una red social según su propio id.

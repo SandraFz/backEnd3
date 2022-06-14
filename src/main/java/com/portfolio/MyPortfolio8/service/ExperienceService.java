@@ -69,8 +69,13 @@ public class ExperienceService implements IExperienceService {
 
     //Eliminar experiencia por su id.
     @Override
-    public void deleteExperience(Long id) {
-        expRepo.deleteById(id);
+    public void deleteExperience(Long idPers, Long idElem) {
+        
+        Person pers = persoRepo.getById(idPers);
+        List<Experience> listExperience = pers.getExperience();
+        Experience experience = expRepo.getById(idElem);
+        listExperience.remove(experience);
+        persoRepo.saveAndFlush(pers);
     }
     
     //Edita una experiencia y la devuelve convertida en DTO.

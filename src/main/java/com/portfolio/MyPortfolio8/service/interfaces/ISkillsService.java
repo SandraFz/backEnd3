@@ -10,6 +10,6 @@ public interface ISkillsService {
     public SkillDTO createSkill(SkillDTO skiDto, Long id);
     public List<SkillDTO> listSkills(Long id);
     public SkillDTO findSkill(Long id);
-    public void deleteSkill(Long id);
+    public void deleteSkill(Long idPers, Long idElem);
     public SkillDTO editSkill(Long id, SkillDTO skiDto);
 }
