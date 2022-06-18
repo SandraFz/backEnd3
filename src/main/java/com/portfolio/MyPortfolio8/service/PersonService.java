@@ -71,8 +71,8 @@ public class PersonService implements IPersonaService {
         person.setOrigin(persDto.getOrigin());
         person.setPresentation(persDto.getPresentation());
         person.setProfessional_photo(persDto.getProfessional_photo());
-        person.setEmail(persDto.getEmail());
-        person.setProject(persDto.getProject());
+        //person.setEmail(persDto.getEmail());
+        //person.setProject(persDto.getProject());//Aquí faltan las otras entities.
         
         Person editedPers = persoRepo.saveAndFlush(person);
     }

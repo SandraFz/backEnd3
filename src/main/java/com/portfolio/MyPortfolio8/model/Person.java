@@ -39,6 +39,8 @@ public class Person {
     private String presentation;
     @Column (name="professional_photo")
     private String professional_photo;
+    @Column (name="img")
+    private byte img;
     @Column (name="email")
     private String email;
     
