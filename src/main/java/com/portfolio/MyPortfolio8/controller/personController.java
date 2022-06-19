@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @CrossOrigin(origins = "https://portfolio-argentina-prog-f5593.web.app")
+@RestController
 @RequestMapping("/person")
 public class personController {
     
