@@ -14,13 +14,5 @@ public class MyPortfolio8Application {
 		SpringApplication.run(MyPortfolio8Application.class, args);
 	}
 
-        @Configuration
-@EnableWebMvc
-public class WebConfig implements WebMvcConfigurer {
-
-@Override
-public void addCorsMappings(CorsRegistry registry) {
-registry.addMapping("/**");
-}
-}
+     
 }
