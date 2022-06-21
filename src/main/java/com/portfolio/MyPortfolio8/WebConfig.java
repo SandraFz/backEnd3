@@ -21,7 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
     registry.addMapping("/**");
     }
-    /*
+    
     @Bean
     public CorsFilter corsFilter() {
     final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -32,6 +32,6 @@ public class WebConfig implements WebMvcConfigurer {
     config.setAllowedMethods(Arrays.stream(HttpMethod.values()).map(HttpMethod::name).collect(Collectors.toList()));
     source.registerCorsConfiguration("/**", config);
     return new CorsFilter(source);
-    }*/
+    }
 }
 
