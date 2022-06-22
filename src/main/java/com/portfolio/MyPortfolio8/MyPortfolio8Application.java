@@ -20,7 +20,7 @@ public class MyPortfolio8Application {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("https://nombreDeTuProyecto.web.app"));
+        config.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app/"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
                 "Authorization", "Origin, Accept", "x-auth-token"));
         config.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
