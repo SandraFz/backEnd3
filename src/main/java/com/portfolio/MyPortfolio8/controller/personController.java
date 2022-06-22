@@ -43,7 +43,6 @@ public class personController {
     }
     
     //Arroja la lista de personas.
-    @CrossOrigin(origins = "https://portfolio-argentina-prog-f5593.web.app/")
     @GetMapping("list")
     public ResponseEntity<List<PersonDTO>> listPerson(){
         List<PersonDTO> listPersDto = persoServ.listPerson();
