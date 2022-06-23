@@ -1,13 +1,10 @@
 package com.portfolio.MyPortfolio8;
 
 
-import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class MyPortfolio8Application {
@@ -15,7 +12,17 @@ public class MyPortfolio8Application {
 	public static void main(String[] args) {
 		SpringApplication.run(MyPortfolio8Application.class, args);
 	}
-        
+
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8080");
+			}
+		};
+	}        
+
+/*        
 @Bean
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -31,6 +38,6 @@ UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCo
 urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 return new CorsFilter(urlBasedCorsConfigurationSource);
 }
-
+*/
 
 }
