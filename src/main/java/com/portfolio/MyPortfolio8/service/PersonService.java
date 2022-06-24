@@ -73,6 +73,10 @@ public class PersonService implements IPersonaService {
         person.setProfessional_photo(persDto.getProfessional_photo());
         person.setEmail(persDto.getEmail());
         person.setProject(persDto.getProject());
+        person.setExperience(persDto.getExperience());
+        person.setStudy(persDto.getStudies());
+        person.setSkills(persDto.getSkills());
+        person.setSoc_med(persDto.getSocMed());
         
         Person editedPers = persoRepo.saveAndFlush(person);
     }
@@ -80,4 +84,5 @@ public class PersonService implements IPersonaService {
     
 
         
+      
 

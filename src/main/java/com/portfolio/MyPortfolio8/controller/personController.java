@@ -40,7 +40,7 @@ public class personController {
     }
     
     //Arroja la lista de personas.
-    @GetMapping("list")
+    @GetMapping("/list")
     public ResponseEntity<List<PersonDTO>> listPerson(){
         List<PersonDTO> listPersDto = persoServ.listPerson();
         return ResponseEntity.status(HttpStatus.OK).body(listPersDto);
@@ -61,7 +61,7 @@ public class personController {
     }
     
     //Edita una persona.
-    @PutMapping("edit/{id}")
+    @PutMapping("/edit/{id}")
     public void editPerson(@PathVariable Long id, @RequestBody PersonDTO persDto){
         
         persoServ.editPerson(id, persDto);
