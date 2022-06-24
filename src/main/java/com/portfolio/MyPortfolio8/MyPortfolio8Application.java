@@ -30,7 +30,7 @@ public class MyPortfolio8Application {
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
 corsConfiguration.setAllowCredentials(true);
-corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200/"));
+corsConfiguration.setAllowedOrigins(Arrays.asList("https://afternoon-plains-82162.herokuapp.com"));
 corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 "Accept", "Authorization", "Origin, Accept", "X-Request-With",
 "Access-Control-Request-Method", "Access-Control-Request-Headers"));
