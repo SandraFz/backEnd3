@@ -25,12 +25,12 @@ public class MyPortfolio8Application {
 		};
 	}        */
 
-/*
+
 @Bean
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
 corsConfiguration.setAllowCredentials(true);
-corsConfiguration.setAllowedOrigins(Arrays.asList("hhttps://portfolio-argentina-prog-f5593.web.app"));
+corsConfiguration.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app"));//http://localhost:4200
 corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 "Accept", "Authorization", "Origin, Accept", "X-Request-With",
 "Access-Control-Request-Method", "Access-Control-Request-Headers"));
@@ -41,6 +41,6 @@ UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCo
 urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 return new CorsFilter(urlBasedCorsConfigurationSource);
 }
-*/
+
 
 }
