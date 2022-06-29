@@ -14,8 +14,29 @@ public class MyPortfolio8Application {
 	public static void main(String[] args) {
 		SpringApplication.run(MyPortfolio8Application.class, args);
 	}
+        
+        @Bean //Sandra
+    public CorsFilter corsFilter() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        final CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app/"));
+        config.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
+                "Authorization", "Origin, Accept", "x-auth-token"));
+        config.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
+                "Authorization", "Origin, Accept", "x-auth-token"));
+        config.addAllowedMethod("OPTIONS");
+        config.addAllowedMethod("HEAD");
+        config.addAllowedMethod("GET");
+        config.addAllowedMethod("PUT");
+        config.addAllowedMethod("POST");
+        config.addAllowedMethod("DELETE");
+        config.addAllowedMethod("PATCH");
+        source.registerCorsConfiguration("/**", config);
+        return new CorsFilter(source);
+    }
 
-@Bean
+/* 1) @Bean
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
 corsConfiguration.setAllowCredentials(true);
@@ -30,4 +51,5 @@ UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCo
 urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 return new CorsFilter(urlBasedCorsConfigurationSource);
 }
+*/
 }
