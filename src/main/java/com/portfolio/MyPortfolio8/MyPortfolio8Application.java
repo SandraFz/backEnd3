@@ -15,12 +15,15 @@ public class MyPortfolio8Application {
 		SpringApplication.run(MyPortfolio8Application.class, args);
 	}
         
+        //https://portfolio-argentina-prog-f5593.web.app/
+        
+        
         @Bean //Sandra
     public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app/"));
+        config.setAllowedOrigins(Arrays.asList("http://localhost:4200/"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
                 "Authorization", "Origin, Accept", "x-auth-token"));
         config.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
