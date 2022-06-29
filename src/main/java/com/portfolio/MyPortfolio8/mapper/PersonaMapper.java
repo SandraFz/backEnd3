@@ -20,11 +20,11 @@ public class PersonaMapper {
         person.setPresentation(persDto.getPresentation());
         person.setProfessional_photo(persDto.getProfessional_photo());
         person.setEmail(persDto.getEmail());
-        person.setProject(persDto.getProject());
+       /* person.setProject(persDto.getProject());
         person.setExperience(persDto.getExperience());
         person.setStudy(persDto.getStudies());
         person.setSkills(persDto.getSkills());
-        person.setSoc_med(persDto.getSocMed());
+        person.setSoc_med(persDto.getSocMed());*/
         
         return person;
     }
@@ -43,11 +43,11 @@ public class PersonaMapper {
         persDto.setPresentation(pers.getPresentation());
         persDto.setProfessional_photo(pers.getProfessional_photo());
         persDto.setEmail(pers.getEmail());
-        persDto.setProject(pers.getProject());
+        /*persDto.setProject(pers.getProject());
         persDto.setExperience(pers.getExperience());
         persDto.setStudies(pers.getStudy());
         persDto.setSkills(pers.getSkills());
-        persDto.setSocMed(pers.getSoc_med());
+        persDto.setSocMed(pers.getSoc_med());*/
         
         
         return persDto;
