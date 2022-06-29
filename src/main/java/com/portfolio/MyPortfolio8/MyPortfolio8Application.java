@@ -15,15 +15,16 @@ public class MyPortfolio8Application {
 		SpringApplication.run(MyPortfolio8Application.class, args);
 	}
         
-        //https://portfolio-argentina-prog-f5593.web.app/
+        //https://portfolio-argentina-prog-f5593.web.app
+        //http://localhost:4200
         
         
-        @Bean //Sandra
+        /*@Bean //Sandra
     public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        config.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
                 "Authorization", "Origin, Accept", "x-auth-token"));
         config.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
@@ -38,12 +39,12 @@ public class MyPortfolio8Application {
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
-
-/* 1) @Bean
+*/
+ @Bean
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
 corsConfiguration.setAllowCredentials(true);
-corsConfiguration.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app/"));//
+corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));//
 corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 "Accept", "Authorization", "Origin, Accept", "X-Request-With",
 "Access-Control-Request-Method", "Access-Control-Request-Headers"));
@@ -54,5 +55,5 @@ UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCo
 urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 return new CorsFilter(urlBasedCorsConfigurationSource);
 }
-*/
+
 }
