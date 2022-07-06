@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/project")
+@RequestMapping("project/")
 public class projectController {
     
     @Autowired
     private IProjectService proyServ;
     
     //Crea un proyecto vinculado a la persona cuyo id se pasa por parámetro.
-    @PostMapping("/new/{id}")
+    @PostMapping("new/{id}")
     public ResponseEntity<ProjectDTO> createProject(@RequestBody ProjectDTO proyDto, @PathVariable Long id){
         
         ProjectDTO newProyDto = proyServ.createProject(proyDto, id);
@@ -34,7 +34,7 @@ public class projectController {
     }
     
     //Arroja una lista de proyectos de la persona cuyp id se pasa por parámetro.
-    @GetMapping("/list/{id}")
+    @GetMapping("list/{id}")
     public ResponseEntity<List<ProjectDTO>> listProject(@PathVariable Long id){
          
         List<ProjectDTO> listProyDto = proyServ.listProject(id);

@@ -24,7 +24,7 @@ public class MyPortfolio8Application {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app"));
+        config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
                 "Authorization", "Origin, Accept", "x-auth-token"));
         config.setExposedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "content-type", "Accept",
@@ -44,7 +44,7 @@ public class MyPortfolio8Application {
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
 corsConfiguration.setAllowCredentials(true);
-corsConfiguration.setAllowedOrigins(Arrays.asList("https://portfolio-argentina-prog-f5593.web.app"));//
+corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));//
 corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 "Accept", "Authorization", "Origin, Accept", "X-Request-With",
 "Access-Control-Request-Method", "Access-Control-Request-Headers"));

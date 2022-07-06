@@ -30,6 +30,8 @@ public class Project {
     private String name_project;
     @Column(name="proy_descrip")
     private String description; 
+    @Column(name="img_proy")
+    private String img_proy;
     @Column(name="logo_proy")
     private String logo_img;
     @Column(name="link_proy")

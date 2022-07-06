@@ -14,6 +14,7 @@ public class ProjectMapper {
         
         project.setName_project (proyDto.getName_project());
         project.setDescription(proyDto.getDescription());
+        project.setImg_proy(proyDto.getImg_proy());
         project.setLogo_img(proyDto.getLogo_img());
         project.setLink_project(proyDto.getLink_project());
         project.setPerson(proyDto.getPerson());
@@ -30,6 +31,7 @@ public class ProjectMapper {
         proyDto.setId_project(proy.getId_project());
         proyDto.setName_project(proy.getName_project());
         proyDto.setDescription(proy.getDescription());
+        proyDto.setImg_proy(proy.getImg_proy());
         proyDto.setLogo_img(proy.getLogo_img());
         proyDto.setLink_project(proy.getLink_project());
         proyDto.setPerson(proy.getPerson());
