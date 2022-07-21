@@ -87,10 +87,12 @@ public class ProjectService implements IProjectService {
         Project project = proServ.getById(id);
         
         project.setName_project (proyDto.getName_project());
+        project.setPrincipal(proyDto.getPrincipal());
         project.setDescription(proyDto.getDescription());
+        project.setImg_proy(proyDto.getImg_proy());
         project.setLogo_img(proyDto.getLogo_img());
         project.setLink_project(proyDto.getLink_project());
-        project.setPerson(proyDto.getPerson());
+        //project.setPerson(proyDto.getPerson());
         
         Project editedProy = proServ.saveAndFlush(project);
         ProjectDTO editedProyDto = mapper.responseProject(editedProy);

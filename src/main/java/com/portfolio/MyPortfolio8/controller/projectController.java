@@ -30,6 +30,7 @@ public class projectController {
     public ResponseEntity<ProjectDTO> createProject(@RequestBody ProjectDTO proyDto, @PathVariable Long id){
         
         ProjectDTO newProyDto = proyServ.createProject(proyDto, id);
+        System.out.println("Esto viene desde el back" + newProyDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(newProyDto);
     }
     

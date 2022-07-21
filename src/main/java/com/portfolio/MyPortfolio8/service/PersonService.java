@@ -55,6 +55,7 @@ public class PersonService implements IPersonaService {
     public PersonDTO findPerson(Long id) {
         Person pers = persoRepo.findById(id).orElse(null);
         PersonDTO persDto = mapper.responsePerson(pers);
+        System.out.println(persDto);
         return persDto;
     }
 
