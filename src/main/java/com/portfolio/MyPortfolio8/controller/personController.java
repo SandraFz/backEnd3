@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/person")
 @CrossOrigin(origins = "http://localhost:4200/")
-public class personController {
+public class PersonController {
     
     @Autowired
     private IExperienceService expServ;

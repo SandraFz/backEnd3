@@ -14,12 +14,13 @@ public class ExperienceMapper {
         
         exp.setId(expDto.getId());
         exp.setCompany(expDto.getCompany());
-        exp.setAsignamet(expDto.getAsignamet());
+        exp.setAsignamet(expDto.getAsignament());
         exp.setAnio_salida(expDto.getAnio_salida());
         exp.setDuracion(expDto.getDuracion());
         exp.setLogo_experience(expDto.getLogo_experience());
         exp.setLink_experience(expDto.getLink_experience());
         exp.setPerson(expDto.getPerson());
+        exp.setImgExperience(expDto.getImages());
         
         return exp;
     }
@@ -31,12 +32,13 @@ public class ExperienceMapper {
         
         expDto.setId(exp.getId());
         expDto.setCompany(exp.getCompany());
-        expDto.setAsignamet(exp.getAsignamet());
+        expDto.setAsignament(exp.getAsignamet());
         expDto.setAnio_salida(exp.getAnio_salida());
         expDto.setDuracion(exp.getDuracion());
         expDto.setLogo_experience(exp.getLogo_experience());
         expDto.setLink_experience(exp.getLink_experience());
         expDto.setPerson(exp.getPerson());
+        expDto.setImages(exp.getImgExperience());
         
         return expDto;
     }

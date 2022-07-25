@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin
 @RequestMapping("project/")
-public class projectController {
+public class ProjectController {
     
     @Autowired
     private IProjectService proyServ;

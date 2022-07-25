@@ -86,12 +86,13 @@ public class ExperienceService implements IExperienceService {
         
         exp.setId(expDto.getId());
         exp.setCompany(expDto.getCompany());
-        exp.setAsignamet(expDto.getAsignamet());
+        exp.setAsignamet(expDto.getAsignament());
         exp.setAnio_salida(expDto.getAnio_salida());
         exp.setDuracion(expDto.getDuracion());
         exp.setLogo_experience(expDto.getLogo_experience());
         exp.setLink_experience(expDto.getLink_experience());
         exp.setPerson(expDto.getPerson());
+        exp.setImgExperience(expDto.getImages());
         
         Experience editedExp = expRepo.saveAndFlush(exp);
         ExperienceDTO editedExpDto = mapper.responseExperience(editedExp);

@@ -20,7 +20,7 @@ public class PersonaMapper {
         person.setPresentation(persDto.getPresentation());
         person.setProfessional_photo(persDto.getProfessional_photo());
         person.setEmail(persDto.getEmail());
-       /* person.setProject(persDto.getProject());
+        /*person.setProject(persDto.getProject());
         person.setExperience(persDto.getExperience());
         person.setStudy(persDto.getStudies());
         person.setSkills(persDto.getSkills());

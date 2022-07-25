@@ -21,7 +21,7 @@ import lombok.Setter;
     private String presentation;
     private String professional_photo;
     private String email;
-   /* private List<Project> project;
+    /*private List<Project> project;
     private List<Experience> experience;
     private List<Study> studies;
     private List<Skill> skills;

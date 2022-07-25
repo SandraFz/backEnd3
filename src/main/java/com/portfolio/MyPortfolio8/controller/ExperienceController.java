@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/exp")
+@RequestMapping("exp")
 public class ExperienceController {
     
     @Autowired
     public ExperienceService expServ;
     
     //Crea una nueva experiencia y la vincula a la persona cuyo id se recibe por parámetro.
-    @PostMapping("/new/{id}")
+    @PostMapping("new/{id}")
     public ResponseEntity<ExperienceDTO> createExperience(@RequestBody ExperienceDTO expDto,@PathVariable Long id){
         
         ExperienceDTO newExpDto = expServ.createExperience(expDto, id);
