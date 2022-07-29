@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter @Getter
 public class ImgExperienceDTO {
     
-    private Long id;
+    private Long id_img;
     private String imgLink;
     private String softSkill;
     private Experience experience;

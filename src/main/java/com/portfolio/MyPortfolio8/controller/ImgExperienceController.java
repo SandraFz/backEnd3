@@ -4,13 +4,13 @@ import com.portfolio.MyPortfolio8.dto.ImgExperienceDTO;
 import com.portfolio.MyPortfolio8.service.ImgExperienceService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,8 +56,14 @@ public class ImgExperienceController {
         imgServ.deleteImgExperience(idExp, idImg);
 }
     
-    
-    
+    //Edita una imagen según su propio id.
+    @PutMapping("edit/{id}")
+    public ResponseEntity<ImgExperienceDTO> editImg(@PathVariable Long id, @RequestBody ImgExperienceDTO imgDto) {
+        
+        ImgExperienceDTO editedImg = imgServ.editImgExperience(id, imgDto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(editedImg);
+    }
 }
     
     

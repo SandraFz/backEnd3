@@ -11,7 +11,7 @@ public class ImgExperienceMapper {
         
         ImgExperience img = new ImgExperience();
                 
-        img.setId(imgExpDto.getId());
+        img.setId_img(imgExpDto.getId_img());
         img.setImgLink(imgExpDto.getImgLink());
         img.setSoftSkill(imgExpDto.getSoftSkill());
         img.setExperience(imgExpDto.getExperience());
@@ -23,7 +23,7 @@ public class ImgExperienceMapper {
         
         ImgExperienceDTO imgDto = new ImgExperienceDTO();
         
-        imgDto.setId(imgExp.getId());
+        imgDto.setId_img(imgExp.getId_img());
         imgDto.setImgLink(imgExp.getImgLink());
         imgDto.setSoftSkill(imgExp.getSoftSkill());
         imgDto.setExperience(imgExp.getExperience());

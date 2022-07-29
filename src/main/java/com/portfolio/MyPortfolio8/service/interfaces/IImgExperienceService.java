@@ -10,7 +10,7 @@ public interface IImgExperienceService {
     public List<ImgExperienceDTO> listImgExperience(Long id);
     public ImgExperienceDTO findImgExperience(Long id);
     public void deleteImgExperience(Long idExp, Long idImg);
-    
+    public ImgExperienceDTO editImgExperience(Long id, ImgExperienceDTO imgDto);
 }
 
 

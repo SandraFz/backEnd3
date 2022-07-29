@@ -80,5 +80,20 @@ public class ImgExperienceService implements IImgExperienceService{
          expRepo.saveAndFlush(exp);
      }
      
+     //Edita una imagen y la devuelve convertida en DTO.
+     @Override
+     public ImgExperienceDTO editImgExperience(Long id, ImgExperienceDTO imgDto) {
+         
+         ImgExperience img = imgRepo.getById(id);
+         
+         img.setImgLink(imgDto.getImgLink());
+         img.setSoftSkill(imgDto.getSoftSkill());
+         
+         ImgExperience editedImg = imgRepo.saveAndFlush(img);
+         ImgExperienceDTO editedImgDto = mapper.responseImgExperience(editedImg);
+         
+         return editedImgDto;
+     }
+     
 }
 

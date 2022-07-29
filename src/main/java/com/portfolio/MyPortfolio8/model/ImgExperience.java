@@ -19,7 +19,7 @@ public class ImgExperience {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_img;
   
     @Column(name = "imgLink")
     private String imgLink;
@@ -34,11 +34,14 @@ public class ImgExperience {
     public ImgExperience() {
     }
 
-    public ImgExperience(Long id, String imgLink, Experience experience) {
-        this.id = id;
+    public ImgExperience(Long id_img, String imgLink, String softSkill, Experience experience) {
+        this.id_img = id_img;
         this.imgLink = imgLink;
+        this.softSkill = softSkill;
         this.experience = experience;
     }
+
+    
     
     
 }
