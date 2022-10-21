@@ -40,7 +40,7 @@ public class Experience {
     @JoinColumn(name="person")
     private Person person;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ImgExperience> imgExperience;
 
     public Experience() {
