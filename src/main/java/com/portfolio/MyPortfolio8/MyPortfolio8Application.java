@@ -40,7 +40,7 @@ public class MyPortfolio8Application {
         return new CorsFilter(source);
     }
 */
- @Bean
+ /*@Bean
 public CorsFilter corsFilter() {
 CorsConfiguration corsConfiguration = new CorsConfiguration();
 corsConfiguration.setAllowCredentials(true);
@@ -54,6 +54,6 @@ corsConfiguration.setAllowedMethods(Arrays.asList("GET", "PUT", "POST", "DELETE"
 UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 return new CorsFilter(urlBasedCorsConfigurationSource);
-}
+}*/
 
 }
