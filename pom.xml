@@ -90,8 +90,8 @@
                 <assembleDirectory>target</assembleDirectory>
                 <programs>
                     <program>
-                        <mainClass>MAIN_CLASS_PATH</mainClass>
-                        <name>BOT_NAME</name>
+                        <mainClass>MyPortfolio8Application</mainClass>
+                        <name>MyPortfolio10-3</name>
                     </program>
                 </programs>
             </configuration>
