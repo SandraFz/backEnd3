@@ -28,8 +28,12 @@ public class Project {
     private Long id_project;
     @Column(name="project")
     private String name_project;
+    @Column(name="principal")
+    private Boolean principal;
     @Column(name="proy_descrip")
     private String description; 
+    @Column(name="img_proy")
+    private String img_proy;
     @Column(name="logo_proy")
     private String logo_img;
     @Column(name="link_proy")
@@ -42,13 +46,17 @@ public class Project {
     public Project() {
     }
 
-    public Project(Long id_project, String name_project, String description, String logo_img, String link_project, Person person) {
+    public Project(Long id_project, String name_project, boolean principal, String description, String img_proy, String logo_img, String link_project, Person person) {
         this.id_project = id_project;
         this.name_project = name_project;
+        this.principal = principal;
         this.description = description;
+        this.img_proy = img_proy;
         this.logo_img = logo_img;
         this.link_project = link_project;
         this.person = person;
     }
+
+   
  
 }

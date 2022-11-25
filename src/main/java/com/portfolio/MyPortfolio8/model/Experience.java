@@ -1,5 +1,7 @@
 package com.portfolio.MyPortfolio8.model;
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,11 +39,14 @@ public class Experience {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="person")
     private Person person;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<ImgExperience> imgExperience;
 
     public Experience() {
     }
 
-    public Experience(Long id, String company, String asignamet, int anio_salida, int duracion, String logo_experience, String link_experience, Person person) {
+    public Experience(Long id, String company, String asignamet, int anio_salida, int duracion, String logo_experience, String link_experience, Person person, List<ImgExperience> imgExperience) {
         this.id = id;
         this.company = company;
         this.asignamet = asignamet;
@@ -49,7 +55,10 @@ public class Experience {
         this.logo_experience = logo_experience;
         this.link_experience = link_experience;
         this.person = person;
+        this.imgExperience = imgExperience;
     }
+
+    
 
     
 

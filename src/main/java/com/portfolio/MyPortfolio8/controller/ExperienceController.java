@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/exp")
+@CrossOrigin(origins = "*")
 public class ExperienceController {
     
     @Autowired
