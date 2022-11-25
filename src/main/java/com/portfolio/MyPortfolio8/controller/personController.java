@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("person")
 @CrossOrigin(origins = "*")
 public class personController {
     
