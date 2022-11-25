@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("exp/img/")
+@RequestMapping("/exp/img/")
 @CrossOrigin(origins = "*")
 public class ImgExperienceController {
     
