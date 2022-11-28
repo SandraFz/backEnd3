@@ -26,7 +26,7 @@ public class Experience {
     @Column(name="company")
     private String company;
     @Column(name="asignament")
-    private String asignamet;
+    private String asignament;
     @Column(name="anio_salida")
     private int anio_salida;
     @Column(name="duracion")
@@ -46,10 +46,10 @@ public class Experience {
     public Experience() {
     }
 
-    public Experience(Long id, String company, String asignamet, int anio_salida, int duracion, String logo_experience, String link_experience, Person person, List<ImgExperience> imgExperience) {
+    public Experience(Long id, String company, String asignament, int anio_salida, int duracion, String logo_experience, String link_experience, Person person, List<ImgExperience> imgExperience) {
         this.id = id;
         this.company = company;
-        this.asignamet = asignamet;
+        this.asignament = asignament;
         this.anio_salida = anio_salida;
         this.duracion = duracion;
         this.logo_experience = logo_experience;

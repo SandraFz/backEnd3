@@ -86,7 +86,7 @@ public class ExperienceService implements IExperienceService {
         
         exp.setId(expDto.getId());
         exp.setCompany(expDto.getCompany());
-        exp.setAsignamet(expDto.getAsignamet());
+        exp.setAsignament(expDto.getAsignament());
         exp.setAnio_salida(expDto.getAnio_salida());
         exp.setDuracion(expDto.getDuracion());
         exp.setLogo_experience(expDto.getLogo_experience());

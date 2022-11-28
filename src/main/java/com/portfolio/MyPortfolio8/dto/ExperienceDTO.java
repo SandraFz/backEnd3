@@ -9,7 +9,7 @@ public class ExperienceDTO {
     
     private Long id;
     private String company;
-    private String asignamet;
+    private String asignament;
     private int anio_salida;
     private int duracion;
     private String logo_experience;
