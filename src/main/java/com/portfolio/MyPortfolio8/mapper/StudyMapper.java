@@ -1,4 +1,4 @@
-package com.portfolio.MyPortfolio8.mapper;
+ package com.portfolio.MyPortfolio8.mapper;
 
 import com.portfolio.MyPortfolio8.dto.StudyDTO;
 import com.portfolio.MyPortfolio8.model.Study;
@@ -33,7 +33,7 @@ public class StudyMapper {
         stuDto.setAnio_iniStudy(stu.getAnio_iniStudy());
         stuDto.setAnio_end(stu.getAnio_end());
         stuDto.setLogo_studies(stu.getLogo_studies());
-        stuDto.setLink_studies(stu.getLogo_studies());
+        stuDto.setLink_studies(stu.getLink_studies());
         stuDto.setPerson(stu.getPerson());
         
         return stuDto;

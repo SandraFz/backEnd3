@@ -42,7 +42,7 @@ public class ImgExperienceController {
         return ResponseEntity.status(HttpStatus.OK).body(listImgExpDto);
     }
     
-    //Encuentra una experiencia según su propio id.
+    //Encuentra una imagen según su propio id.
     @GetMapping("find/{id}")
     public ResponseEntity<ImgExperienceDTO> findImgExperience(@PathVariable Long id){
         
