@@ -43,7 +43,7 @@ public class personController {
     }
     
     //Arroja la lista de personas.
-    @GetMapping("list")
+    @GetMapping("/list")
     public ResponseEntity<List<PersonDTO>> listPerson(){
         List<PersonDTO> listPersDto = persoServ.listPerson();
         return ResponseEntity.status(HttpStatus.OK).body(listPersDto);
