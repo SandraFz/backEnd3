@@ -26,7 +26,8 @@ public class ExperienceController {
     
     //Crea una nueva experiencia y la vincula a la persona cuyo id se recibe por parámetro.
     @PostMapping("/new/{id}")
-    public ResponseEntity<ExperienceDTO> createExperience(@RequestBody ExperienceDTO expDto,@PathVariable Long id){
+    public ResponseEntity<ExperienceDTO> createExperience(@RequestBody ExperienceDTO expDto,
+                                                          @PathVariable Long id){
         
         ExperienceDTO newExpDto = expServ.createExperience(expDto, id);
         return ResponseEntity.status(HttpStatus.CREATED).body(newExpDto);

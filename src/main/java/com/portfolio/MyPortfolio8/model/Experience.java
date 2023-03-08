@@ -40,7 +40,7 @@ public class Experience {
     @JoinColumn(name="person")
     private Person person;
     
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ImgExperience> imgExperience;
 
     public Experience() {
@@ -58,13 +58,8 @@ public class Experience {
         this.imgExperience = imgExperience;
     }
 
-    
-
-    
-
-    
-
-    
-    
-    
+    /*public List<ImgExperience> getImgExperience() {
+        return imgExperience;
+    }*/
 }
+

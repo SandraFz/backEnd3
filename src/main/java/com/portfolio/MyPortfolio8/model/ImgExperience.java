@@ -40,8 +40,5 @@ public class ImgExperience {
         this.softSkill = softSkill;
         this.experience = experience;
     }
-
-    
-    
     
 }

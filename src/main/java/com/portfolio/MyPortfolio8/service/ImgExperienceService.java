@@ -29,7 +29,16 @@ public class ImgExperienceService implements IImgExperienceService{
     //Agrega una nueva imagen y lo vincula al proyecto cuyo id se pasa por parámetro.
     @Override
     public ImgExperienceDTO createImgExperience(ImgExperienceDTO imgExpDto, Long id) {
-    
+
+        /*ImgExperience imgExp = mapper.requestImgExperience(imgExpDto);
+
+        Experience exp = expRepo.getById(id);
+        exp.getImgExperience().add(imgExp);
+        ImgExperience newImgExp = imgRepo.save(imgExp);
+
+        expRepo.saveAndFlush(exp);*/
+
+
         ImgExperience imgExp = mapper.requestImgExperience(imgExpDto);
         ImgExperience newImgExp = imgRepo.save(imgExp);
         
