@@ -1,14 +1,7 @@
 package com.portfolio.MyPortfolio8.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,8 +19,9 @@ public class ImgExperience {
     
     @Column(name = "softSkill")
     private String softSkill;
-    
-    @ManyToOne(fetch=FetchType.LAZY)
+
+    /*Agregrué todo después de LAZY*/
+    @ManyToOne(fetch=FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     @JoinColumn(name = "experience")
     private Experience experience;
 
@@ -40,5 +34,9 @@ public class ImgExperience {
         this.softSkill = softSkill;
         this.experience = experience;
     }
+
+    
+   
+    
     
 }

@@ -41,8 +41,8 @@ public class Person {
     private String professional_photo;
     //@Column (name="img")
     //private byte img;
-    @Column (name="email")
-    private String email;
+    //@Column (name="email")
+    //private String email;
     
     /*@OneToOne*/
     
@@ -65,7 +65,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(Long id_person, String name, String lastName, int age, String profession, String origin, String presentation, String professional_photo, String email, List<Project> project, List<Experience> experience, List<Study> study, List<Skill> skills, List<SocialMedia> soc_med) {
+    public Person(Long id_person, String name, String lastName, int age, String profession, String origin, String presentation, String professional_photo, /*String email,*/ List<Project> project, List<Experience> experience, List<Study> study, List<Skill> skills, List<SocialMedia> soc_med) {
         this.id_person = id_person;
         this.name = name;
         this.lastName = lastName;
@@ -74,7 +74,7 @@ public class Person {
         this.origin = origin;
         this.presentation = presentation;
         this.professional_photo = professional_photo;
-        this.email = email;
+        //this.email = email;
         this.project = project;
         this.experience = experience;
         this.study = study;
