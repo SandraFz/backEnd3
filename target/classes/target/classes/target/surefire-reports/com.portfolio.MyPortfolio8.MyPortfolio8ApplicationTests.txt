@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.portfolio.MyPortfolio8.MyPortfolio8ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 283.533 s - in com.portfolio.MyPortfolio8.MyPortfolio8ApplicationTests
