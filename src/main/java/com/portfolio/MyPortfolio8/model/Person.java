@@ -29,7 +29,7 @@ public class Person {
     private String name;
     @Column (name="lastName")
     private String lastName;
-    @Column (name="age", nullable = true, length = 20)
+    @Column (name="age")
     private int age;
     @Column (name="profession")
     private String profession;
